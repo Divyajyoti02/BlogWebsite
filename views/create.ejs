@@ -1,0 +1,28 @@
+<%- include("./partials/header.ejs") %>
+
+<div class="margin-h margin-v">
+    <h1>Create blog</h1>
+</div>
+
+<div>
+    <form class="margin-h margin-v">
+        <div class="form-group margin-v-tiny">
+          <label for="formControlInput1">Title</label>
+          <input type="text" class="form-control" id="formControlInput1" name="title" required>
+        </div>
+        <div class="form-group margin-v-tiny">
+          <label for="formControlTextarea1">Body text</label>
+          <textarea class="form-control" id="formControlTextarea1" rows="10" name="desc" required></textarea>
+        </div>
+        <div class="form-group margin-v-tiny button-group">
+            <input type="submit" class="btn-primary" value="Create">
+            <a href="/">
+                <div class="btn-danger">Cancel</div>
+            </a>
+        </div>
+    </form>
+</div>
+
+
+
+<%- include("./partials/footer.ejs") %>

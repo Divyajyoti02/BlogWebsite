@@ -1,0 +1,33 @@
+<%- include("./partials/header.ejs") %>
+
+<div class="margin-h margin-v"><h1>Blogs</h1></div>
+
+
+<div class="blog-handle margin-h">
+    <% for( let idx = 0; idx < blogs.length; idx++ ) { %>
+        <div class="card-container">
+            <div class="close">
+                <a href=<%= `/close?idx=${idx}` %> title="Delete Blog">
+                    <img src="./images/close.png" />
+                </a>
+            </div>
+            <a href=<%= `/blog?idx=${idx}` %> title="<%= blogs[idx].title %>">
+                <div class="card bg-1">
+                    <div class="title">
+                        <h6><%= functions.truncateString(blogs[idx].title, 30) %></h6>
+                    </div>
+                    <div class="content a-color-5">
+                        <p><%= functions.truncateString(blogs[idx].desc, 100) %></p>
+                    </div>
+                    <div class="timestamp a-color-5">
+                        <hr />
+                        <p class="center-align"><%= functions.whenPosted(new Date(), blogs[idx].time) %></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    <% } %>
+</div>
+
+
+<%- include("./partials/footer.ejs") %>
